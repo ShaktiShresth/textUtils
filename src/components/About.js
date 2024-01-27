@@ -1,16 +1,9 @@
 import Accordion from "react-bootstrap/Accordion";
 
 export default function About(props) {
-  let myStyle = {
-    color: props.mode === "dark" ? "white" : "#042743",
-    backgroundColor: props.mode === "dark" ? "#042743" : "white",
-  };
-
   return (
     <div className="container">
-      <h1 className="my-4" style={myStyle}>
-        About Us
-      </h1>
+      <h1 className="my-4">About Us</h1>
       <Accordion defaultActiveKey="0">
         <Accordion.Item eventKey="0">
           <Accordion.Header>Accordion Item #1</Accordion.Header>

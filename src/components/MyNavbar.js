@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 export default function MyNavbar(props) {
   return (
     <>
-      <Navbar bg={props.mode} variant={props.mode} expand="lg">
+      <Navbar expand="lg">
         <Container fluid>
           <Navbar.Brand to="/">{props.title}</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
@@ -42,38 +42,6 @@ export default function MyNavbar(props) {
                 {props.aboutText}
               </Link>
             </Nav>
-            <div className="d-flex">
-              <div
-                onClick={() => props.toggleMode("primary")}
-                className="bg-primary rounded mx-2"
-                style={{ height: "30px", width: "30px", cursor: "pointer" }}
-              ></div>
-              <div
-                onClick={() => props.toggleMode("success")}
-                className="bg-success rounded mx-2"
-                style={{ height: "30px", width: "30px", cursor: "pointer" }}
-              ></div>
-              <div
-                onClick={() => props.toggleMode("danger")}
-                className="bg-danger rounded mx-2"
-                style={{ height: "30px", width: "30px", cursor: "pointer" }}
-              ></div>
-              <div
-                onClick={() => props.toggleMode("warning")}
-                className="bg-warning rounded mx-2"
-                style={{ height: "30px", width: "30px", cursor: "pointer" }}
-              ></div>
-              <div
-                onClick={() => props.toggleMode("light")}
-                className="bg-light rounded mx-2"
-                style={{ height: "30px", width: "30px", cursor: "pointer" }}
-              ></div>
-              <div
-                onClick={() => props.toggleMode("dark")}
-                className="bg-dark rounded mx-2"
-                style={{ height: "30px", width: "30px", cursor: "pointer" }}
-              ></div>
-            </div>
           </Navbar.Collapse>
         </Container>
       </Navbar>

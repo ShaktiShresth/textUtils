@@ -43,7 +43,7 @@ export default function TextForm(props) {
             as="textarea"
             placeholder="Your text..."
             value={text}
-            className={`myBox bg-${props.mode === "dark" ? "gray" : "green"}`}
+            className="myBox"
             onChange={handleOnChange}
             rows={8}
           />

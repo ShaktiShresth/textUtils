@@ -8,7 +8,6 @@ import AlertBox from "./components/Alert";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
-  const [mode, setMode] = useState("light");
   const [alert, setAlert] = useState(null);
 
   const showAlert = (message, type) => {
@@ -21,39 +20,9 @@ function App() {
     }, 1500);
   };
 
-  function removeBodyClasses() {
-    document.body.classList.remove("bg-light");
-    document.body.classList.remove("bg-dark");
-    document.body.classList.remove("bg-success");
-    document.body.classList.remove("bg-danger");
-    document.body.classList.remove("bg-warning");
-    document.body.classList.remove("bg-primary");
-  }
-
-  const toggleMode = (cls) => {
-    removeBodyClasses();
-    document.body.classList.add("bg-" + cls);
-    if (mode === "light") {
-      setMode("dark");
-      document.body.style.backgroundColor = "#042743";
-      document.body.style.color = "white";
-      showAlert("Dark mode is enabled.", "success");
-    } else {
-      setMode("light");
-      document.body.style.backgroundColor = "white";
-      document.body.style.color = "#212529";
-      showAlert("Light mode is enabled.", "success");
-    }
-  };
-
   return (
     <>
-      <MyNavbar
-        title="textUtils"
-        aboutText="About"
-        mode={mode}
-        toggleMode={toggleMode}
-      />
+      <MyNavbar title="textUtils" aboutText="About" />
       <AlertBox alert={alert} />
       <div className="container my-4">
         {/* ROUTES */}
@@ -68,7 +37,7 @@ function App() {
               />
             }
           />
-          <Route exact path="/about" element={<About mode={mode} />} />
+          <Route exact path="/about" element={<About />} />
         </Routes>
       </div>
     </>
